@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build SocialNetwork",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build",
+                "--config",
+                "Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "Run SocialNetwork",
+            "command": "${workspaceFolder}/build/SocialNetwork",
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "dependsOn": "Build SocialNetwork",
+            "problemMatcher": []
+        }
+    ]
+}
